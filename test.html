@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1561.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"&gt;</p>
+<p class="p1">&lt;!-- three.js library --&gt;</p>
+<p class="p1">&lt;script src='vendor/three.js/build/three.min.js'&gt;&lt;/script&gt;</p>
+<p class="p1">&lt;!-- ar.js --&gt;</p>
+<p class="p1">&lt;script src="../build/ar.js"&gt;&lt;/script&gt;</p>
+<p class="p1">&lt;script&gt;THREEx.ArToolkitContext.baseURL = '../'&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;body style='margin : 0px; overflow: hidden; font-family: Monospace;'&gt;&lt;div style='position: absolute; top: 10px; width:100%; text-align: center; z-index: 1;'&gt;</p>
+<p class="p1"><span class="Apple-tab-span">	</span>&lt;a href="https://github.com/jeromeetienne/AR.js/" target="_blank"&gt;AR.js&lt;/a&gt; - three.js camera transform</p>
+<p class="p1"><span class="Apple-tab-span">	</span>&lt;br/&gt;</p>
+<p class="p1"><span class="Apple-tab-span">	</span>Contact me any time at &lt;a href='https://twitter.com/jerome_etienne' target='_blank'&gt;@jerome_etienne&lt;/a&gt;</p>
+<p class="p1">&lt;/div&gt;&lt;script&gt;</p>
+<p class="p1"><span class="Apple-tab-span">	</span>//////////////////////////////////////////////////////////////////////////////////</p>
+<p class="p1"><span class="Apple-tab-span">	</span>//<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Init</p>
+<p class="p1"><span class="Apple-tab-span">	</span>//////////////////////////////////////////////////////////////////////////////////</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span>// init renderer</p>
+<p class="p1"><span class="Apple-tab-span">	</span>var renderer<span class="Apple-tab-span">	</span>= new THREE.WebGLRenderer({</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>antialias: true,</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>alpha: true</p>
+<p class="p1"><span class="Apple-tab-span">	</span>});</p>
+<p class="p1"><span class="Apple-tab-span">	</span>renderer.setClearColor(new THREE.Color('lightgrey'), 0)</p>
+<p class="p1"><span class="Apple-tab-span">	</span>renderer.setSize( 640, 480 );</p>
+<p class="p1"><span class="Apple-tab-span">	</span>renderer.domElement.style.position = 'absolute'</p>
+<p class="p1"><span class="Apple-tab-span">	</span>renderer.domElement.style.top = '0px'</p>
+<p class="p1"><span class="Apple-tab-span">	</span>renderer.domElement.style.left = '0px'</p>
+<p class="p1"><span class="Apple-tab-span">	</span>document.body.appendChild( renderer.domElement );</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span>// array of functions for the rendering loop</p>
+<p class="p1"><span class="Apple-tab-span">	</span>var onRenderFcts= [];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span>// init scene and camera</p>
+<p class="p1"><span class="Apple-tab-span">	</span>var scene<span class="Apple-tab-span">	</span>= new THREE.Scene();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span>//////////////////////////////////////////////////////////////////////////////////</p>
+<p class="p1"><span class="Apple-tab-span">	</span>//<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Initialize a basic camera</p>
+<p class="p1"><span class="Apple-tab-span">	</span>//////////////////////////////////////////////////////////////////////////////////</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span>// Create a camera</p>
+<p class="p1"><span class="Apple-tab-span">	</span>var camera = new THREE.Camera();</p>
+<p class="p1"><span class="Apple-tab-span">	</span>scene.add(camera);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span>////////////////////////////////////////////////////////////////////////////////</p>
+<p class="p1"><span class="Apple-tab-span">	</span>//<span class="Apple-converted-space">          </span>handle arToolkitSource</p>
+<p class="p1"><span class="Apple-tab-span">	</span>////////////////////////////////////////////////////////////////////////////////</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span>var arToolkitSource = new THREEx.ArToolkitSource({</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>// to read from the webcam</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>sourceType : 'webcam',</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>// // to read from an image</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>// sourceType : 'image',</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>// sourceUrl : THREEx.ArToolkitContext.baseURL + '../data/images/img.jpg',</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>// to read from a video</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>// sourceType : 'video',</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>// sourceUrl : THREEx.ArToolkitContext.baseURL + '../data/videos/headtracking.mp4',</p>
+<p class="p1"><span class="Apple-tab-span">	</span>})</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span>arToolkitSource.init(function onReady(){</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>onResize()</p>
+<p class="p1"><span class="Apple-tab-span">	</span>})</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span>// handle resize</p>
+<p class="p1"><span class="Apple-tab-span">	</span>window.addEventListener('resize', function(){</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>onResize()</p>
+<p class="p1"><span class="Apple-tab-span">	</span>})</p>
+<p class="p1"><span class="Apple-tab-span">	</span>function onResize(){</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>arToolkitSource.onResizeElement()</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>arToolkitSource.copyElementSizeTo(renderer.domElement)</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>if( arToolkitContext.arController !== null ){</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>arToolkitSource.copyElementSizeTo(arToolkitContext.arController.canvas)</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</p>
+<p class="p1"><span class="Apple-tab-span">	</span>}</p>
+<p class="p1"><span class="Apple-tab-span">	</span>////////////////////////////////////////////////////////////////////////////////</p>
+<p class="p1"><span class="Apple-tab-span">	</span>//<span class="Apple-converted-space">          </span>initialize arToolkitContext</p>
+<p class="p1"><span class="Apple-tab-span">	</span>////////////////////////////////////////////////////////////////////////////////</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span>// create atToolkitContext</p>
+<p class="p1"><span class="Apple-tab-span">	</span>var arToolkitContext = new THREEx.ArToolkitContext({</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>cameraParametersUrl: THREEx.ArToolkitContext.baseURL + '../data/data/camera_para.dat',</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>detectionMode: 'mono',</p>
+<p class="p1"><span class="Apple-tab-span">	</span>})</p>
+<p class="p1"><span class="Apple-tab-span">	</span>// initialize it</p>
+<p class="p1"><span class="Apple-tab-span">	</span>arToolkitContext.init(function onCompleted(){</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>// copy projection matrix to camera</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>camera.projectionMatrix.copy( arToolkitContext.getProjectionMatrix() );</p>
+<p class="p1"><span class="Apple-tab-span">	</span>})</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span>// update artoolkit on every frame</p>
+<p class="p1"><span class="Apple-tab-span">	</span>onRenderFcts.push(function(){</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>if( arToolkitSource.ready === false )<span class="Apple-tab-span">	</span>return</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>arToolkitContext.update( arToolkitSource.domElement )</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>// update scene.visible if the marker is seen</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>scene.visible = camera.visible</p>
+<p class="p1"><span class="Apple-tab-span">	</span>})</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span>////////////////////////////////////////////////////////////////////////////////</p>
+<p class="p1"><span class="Apple-tab-span">	</span>//<span class="Apple-converted-space">          </span>Create a ArMarkerControls</p>
+<p class="p1"><span class="Apple-tab-span">	</span>////////////////////////////////////////////////////////////////////////////////</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span>// init controls for camera</p>
+<p class="p1"><span class="Apple-tab-span">	</span>var markerControls = new THREEx.ArMarkerControls(arToolkitContext, camera, {</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>type : 'pattern',</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.hiro',</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>// patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.kanji',</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>// as we controls the camera, set changeMatrixMode: 'cameraTransformMatrix'</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>changeMatrixMode: 'cameraTransformMatrix'</p>
+<p class="p1"><span class="Apple-tab-span">	</span>})</p>
+<p class="p1"><span class="Apple-tab-span">	</span>// as we do changeMatrixMode: 'cameraTransformMatrix', start with invisible scene</p>
+<p class="p1"><span class="Apple-tab-span">	</span>scene.visible = false</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span>//////////////////////////////////////////////////////////////////////////////////</p>
+<p class="p1"><span class="Apple-tab-span">	</span>//<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>add an object in the scene</p>
+<p class="p1"><span class="Apple-tab-span">	</span>//////////////////////////////////////////////////////////////////////////////////</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span>// add a torus knot</p>
+<p class="p1"><span class="Apple-tab-span">	</span>var geometry<span class="Apple-tab-span">	</span>= new THREE.CubeGeometry(1,1,1);</p>
+<p class="p1"><span class="Apple-tab-span">	</span>var material<span class="Apple-tab-span">	</span>= new THREE.MeshNormalMaterial({</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>transparent : true,</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>opacity: 0.5,</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>side: THREE.DoubleSide</p>
+<p class="p1"><span class="Apple-tab-span">	</span>});</p>
+<p class="p1"><span class="Apple-tab-span">	</span>var mesh<span class="Apple-tab-span">	</span>= new THREE.Mesh( geometry, material );</p>
+<p class="p1"><span class="Apple-tab-span">	</span>mesh.position.y<span class="Apple-tab-span">	</span>= geometry.parameters.height/2</p>
+<p class="p1"><span class="Apple-tab-span">	</span>scene.add( mesh );</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span>var geometry<span class="Apple-tab-span">	</span>= new THREE.TorusKnotGeometry(0.3,0.1,64,16);</p>
+<p class="p1"><span class="Apple-tab-span">	</span>var material<span class="Apple-tab-span">	</span>= new THREE.MeshNormalMaterial();</p>
+<p class="p1"><span class="Apple-tab-span">	</span>var mesh<span class="Apple-tab-span">	</span>= new THREE.Mesh( geometry, material );</p>
+<p class="p1"><span class="Apple-tab-span">	</span>mesh.position.y<span class="Apple-tab-span">	</span>= 0.5</p>
+<p class="p1"><span class="Apple-tab-span">	</span>scene.add( mesh );</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span>onRenderFcts.push(function(delta){</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>mesh.rotation.x += Math.PI*delta</p>
+<p class="p1"><span class="Apple-tab-span">	</span>})</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span>//////////////////////////////////////////////////////////////////////////////////</p>
+<p class="p1"><span class="Apple-tab-span">	</span>//<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>render the whole thing on the page</p>
+<p class="p1"><span class="Apple-tab-span">	</span>//////////////////////////////////////////////////////////////////////////////////</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span>// render the scene</p>
+<p class="p1"><span class="Apple-tab-span">	</span>onRenderFcts.push(function(){</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>renderer.render( scene, camera );</p>
+<p class="p1"><span class="Apple-tab-span">	</span>})</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span>// run the rendering loop</p>
+<p class="p1"><span class="Apple-tab-span">	</span>var lastTimeMsec= null</p>
+<p class="p1"><span class="Apple-tab-span">	</span>requestAnimationFrame(function animate(nowMsec){</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>// keep looping</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>requestAnimationFrame( animate );</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>// measure time</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>lastTimeMsec<span class="Apple-tab-span">	</span>= lastTimeMsec || nowMsec-1000/60</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>var deltaMsec<span class="Apple-tab-span">	</span>= Math.min(200, nowMsec - lastTimeMsec)</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>lastTimeMsec<span class="Apple-tab-span">	</span>= nowMsec</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>// call each update function</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>onRenderFcts.forEach(function(onRenderFct){</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>onRenderFct(deltaMsec/1000, nowMsec/1000)</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>})</p>
+<p class="p1"><span class="Apple-tab-span">	</span>})</p>
+<p class="p1">&lt;/script&gt;&lt;/body&gt;</p>
+</body>
+</html>
