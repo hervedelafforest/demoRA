@@ -5,13 +5,13 @@
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
 <body style='margin : 20px; overflow: hidden;'>
 	<a-scene embedded arjs='sourceType: webcam;'>
-<!-- Partie consacrée au contenu -->
-<a-assets>
-<!-- id="nom de votre fichier" src="l'adresse url de votre fichier" -->
-	<a-asset-item id="objet" src="https://www.unitear.com/ground-based-webar/?campaign=88333efbd2e6a812a995d2bd57dd56a5"></a-asset-item>
-</a-assets>
-<!-- les valeurs de scale permettent d'ajuster la taille d'affichage du fichier, gltf-model="#nom de votre fichier" -->
-<a-entity scale="20 20 20"  gltf-model="objet"></a-entity>
+		<!-- Partie consacrée au contenu -->
+		<a-assets>
+		<!-- id="nom de votre fichier" src="l'adresse url de votre fichier" -->
+			<a-asset-item id="objet" src="https://www.unitear.com/ground-based-webar/?campaign=88333efbd2e6a812a995d2bd57dd56a5"></a-asset-item>
+		</a-assets>
+		<!-- les valeurs de scale permettent d'ajuster la taille d'affichage du fichier, gltf-model="#nom de votre fichier" -->
+		<a-entity scale="20 20 20"  gltf-model="objet"></a-entity>
 		<a-marker-camera preset='hiro'></a-marker-camera>
 	</a-scene>
 </body>
