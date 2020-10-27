@@ -1,4 +1,11 @@
 {
+	"asset": {
+		"generator": "Unity 2017.1.0f3",
+		"extras": {
+			"exporterVersion" : "2.2.0"
+		},
+		"version": "2.0"
+	},
 	"accessors": [
 		{
 			"bufferView": 2,
