@@ -1,43 +1,46 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,500,900')
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,500,900');
 
-body
-	margin 100px
-	overflow hidden
-	font-family 'Roboto', sans-serif
+body {
+	margin: 0px;
+	overflow: hidden;
+	font-family: 'Times New Roman', Times, serif
+}
 
-.btns-wrap
-	font-family 'Roboto', sans-serif
-	bottom 20px
-	left 20px
-	position absolute
-	display flex
-	flex-direction row
-	z-index 9998
-	
-.btn
-	user-select none
-	cursor pointer
-	box-sizing border-box
-	margin 18px
-	border-radius 1000px
-	width 60px
-	height 60px
-	background #f45
-	display inline-block
-	text-align center
-	padding 17px 20px
-	transition all 0.2s
-	
-.rotate
-	background-color #0078ff
-	background-image url(https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_3d_rotation_white_24px.svg)
-	background-size 60%
-	background-repeat no-repeat
-	background-position center
-	&_fade
-		opacity 0.4
-		background-color #323965
-	
+.btns-wrap {
+	font-family: 'Times New Roman', Times, serif;
+	bottom: 20px;
+	left: 20px;
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	z-index: 9998;
+}
+
+.btn {
+	user-select: none;
+	cursor: pointer;
+	box-sizing: border-box;
+	margin: 18px;
+	border-radius: 1000px;
+	width: 60px;
+	height: 60px;
+	background: #f45;
+	display: inline-block;
+	text-align: center;
+	padding: 17px,20px;
+	transition: all 0.2s;
+}
+
+.rotate {
+	background-color: #0078ff;
+	background-image: url(https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_3d_rotation_white_24px.svg);
+	background-size: 60%;
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity: 0.4;
+	background-color: #323965;
+}
+
 .scale
 	background-color #39F3F6
 	background-image url(https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_zoom_in_white_24px.svg)
