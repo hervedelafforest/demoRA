@@ -41,79 +41,78 @@ body {
 	background-color: #323965;
 }
 
-.scale
-	background-color #39F3F6
-	background-image url(https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_zoom_in_white_24px.svg)
-	background-size 60%
-	background-repeat no-repeat
-	background-position center
-	transform scale(1)
-	&_one
+.scale{
+	background-color :#39F3F6;
+	background-image :url(https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_zoom_in_white_24px.svg);
+	background-size :60%;
+	background-repeat :no-repeat;
+	background-position : center;
+	transform : scale(1)
+	&_one:
 		transform scale(1.2)
 		background-size 70%
-	&_two
+	&_two:
 		transform scale(1.4)
-		background-size 80%
-	
-.switch
-	background-color #687C88
-	width auto
-	font-weight 900
-	font-size 20px
-	color #ffff
-	
-.AR-tip
-	z-index 9999
-	// box-sizing border-box
-	padding 30px 50px 60px
-	min-width 300px
-	max-width 400px
-	display block
-	background rgba(0,0,0,0.7)
-	position absolute
-	transform translate(-50%,-50%)
-	top 50%
-	left 50%
-	h2
-		color white
-		font-weight 500
-	p
-		font-weight 300
-		color white
-		font-size 1.2em
-		line-height 1.3em
+		background-size 80%;
+}	
+.switch{
+	background-color : #687C88;
+	width : auto;
+	font-weight : 900;
+	font-size: 20px;
+	color: #ffff;
+}
 
-.website-visit
-	z-index 9999
-	padding-top 0px
-	min-width 300px
-	max-width 800px
-	display block
-	background rgba(0,0,0,0)
-	position absolute
-	transform translate(-50%,-50%)
-	top 5%
-	left 50%
-	h2
-		color white
-		font-weight 500
-	p
-		font-weight 100
-		color white
-		font-size 1.2em
-		line-height 1.3em
-		text-align center
-		
-.gotit
-	font-style italic
-	font-size 1.4em
-	color yellow
-	text-decoration none
-	border-bottom 2px solid yellow
+.AR-tip {
+	z-index: 9999;
+	box-sizing: border-box;
+	padding: 30px 50px 60px;
+	min-width: 300px;
+	max-width: 400px;
+	display: block;
+	background: rgba(0,0,0,0.7);
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 50%;
+	left: 50%;
+}
 
-.links
-	color #f45
-	
-.website-links
-		color #DEDFE0
-		opacity 0.5
+h2{
+	color: white;
+	font-weight: 500;
+}
+p{
+		font-weight : 300;
+		color : white;
+		font-size : 1.2em;
+		line-height : 1.3em;
+}
+.website-visit{
+	z-index 9999;
+	padding-top 0px;
+	min-width 300px;
+	max-width 800px;
+	display block;
+	background rgba(0,0,0,0);
+	position absolute;
+	transform translate(-50%,-50%);
+	top 5%;
+	left 50%;
+}
+
+.gotit {
+	font-style : italic;
+	font-size : 1.4em;
+	color : yellow;
+	text-decoration : none;
+	border-bottom : 2px solid yellow;
+}
+
+.links {
+	color : #f45;
+}
+
+.website-links {
+	color: #DEDFE0;
+	opacity: 0.5;
+}
