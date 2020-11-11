@@ -48,6 +48,7 @@ body {
 	background-repeat :no-repeat;
 	background-position : center;
 	transform : scale(1)
+
 	&_one:
 		transform scale(1.2)
 		background-size 70%
