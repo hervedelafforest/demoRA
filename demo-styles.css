@@ -141,7 +141,7 @@ footer {
 .dropdown {
     position: fixed ;
     display: inline-block;
-    max-width: 5%;
+    max-width: 50%;
 }
 
 .dropdown-child {
