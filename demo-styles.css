@@ -131,17 +131,17 @@ footer {
     padding: 20px;
     margin-top: 20px;
     font-size: 30px;
-    background-color: rgb(214, 214, 214)
+    background-color: rgb(214, 214, 214);
 }
 
     .boutonmenuprincipal:hover {
-        background-color: #ff4444;
+        background-color: rgb(193, 193, 193);
     }
 
 .dropdown {
     position: fixed ;
     display: inline-block;
-    max-width: 50%;
+    max-width: 5%;
 }
 
 .dropdown-child {
