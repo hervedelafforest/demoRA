@@ -123,3 +123,40 @@ footer {
     font-style: italic;
     line-height: 1.5em;
 }
+
+.boutonmenuprincipal {
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 30px;
+    background-color: rgb(214, 214, 214)
+}
+
+    .boutonmenuprincipal:hover {
+        background-color: #ff4444;
+    }
+
+.dropdown {
+    position: fixed ;
+    display: inline-block;
+    max-width: 5%;
+}
+
+.dropdown-child {
+    display: none;
+    background-color: #f28c8c;
+    min-width: 50px;
+}
+
+    .dropdown-child a {
+        color: white;
+        padding: 20px;
+        text-decoration: none;
+        display: block;
+    }
+
+.dropdown:hover .dropdown-child {
+    display: block;
+}
