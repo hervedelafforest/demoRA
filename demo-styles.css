@@ -146,8 +146,8 @@ footer {
 
 .dropdown-child {
     display: none;
-    background-color: #f28c8c;
-    min-width: 50px;
+    background-color: rgb(193, 193, 193);
+    min-width: 250px;
 }
 
     .dropdown-child a {
