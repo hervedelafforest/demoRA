@@ -19,19 +19,23 @@
     <!-- 💁 OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
     <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js"
             defer></script>
-    <div class="dropdown">
-        <button class="boutonmenuprincipal"><img src="iconemenu.png"></button>
-        <div class="dropdown-child">
-            <a href="index.html">Accueil</a>
-            <a href="http://www.votresite.com.com/page2.html">Fonctionnement de l'application</a>
-            <a href="RA6banane.html">Catalogue de modele 3D</a>
-            <a href="http://www.votresite.com.com/page4.html">Credits</a>
+    <div class="outer-div">
+        <div class="dropdown">
+            <button class="boutonmenuprincipal"><img src="iconemenu.png"></button>
+            <div class="dropdown-child">
+                <a href="index.html">Accueil</a>
+                <a href="http://www.votresite.com.com/page2.html">Fonctionnement de l'application</a>
+                <a href="RA6banane.html">Catalogue de modele 3D</a>
+                <a href="http://www.votresite.com.com/page4.html">Credits</a>
+            </div>
         </div>
-    </div>
-    <div style="max-width: 100%">
-        <div style="max-width: 10%; position: fixed; top: 40px; right: 40px">
+        <div class="inner-div">
+            <h1>Application Web de Realité Augmentée</h1>
+        </div>
+        <div style="max-width: 10%; position: absolute; top: 50px; right: 40px">
             <img src="logoicam.png" alt="logo icam">
         </div>
+    </div>
 </head>
 <body>
         <div id="card1">
