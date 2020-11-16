@@ -164,7 +164,7 @@ footer {
 
 .outer-div {
     padding: 30px;
-    position : static;
+    position : unset;
 }
 
 .inner-div {
