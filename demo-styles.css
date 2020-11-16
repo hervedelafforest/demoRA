@@ -139,7 +139,7 @@ footer {
     }
 
 .dropdown {
-    position: fixed ;
+    position: absolute ;
     display: inline-block;
     max-width: 5%;
 }
@@ -159,4 +159,17 @@ footer {
 
 .dropdown:hover .dropdown-child {
     display: block;
+}
+
+
+.outer-div {
+    padding: 30px;
+    position : static;
+}
+
+.inner-div {
+    margin: 0 auto;
+    max-width: 700px;
+    height: 100px;
+    border-radius: 3px;
 }
