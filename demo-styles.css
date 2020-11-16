@@ -140,9 +140,11 @@ footer {
     }
 
 .dropdown {
-    position: absolute ;
+    position: absolute;
     display: inline-block;
     width: 10%;
+    top: 50px;
+    left: 40px
 }
 
 .dropdown-child {
