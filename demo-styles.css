@@ -208,3 +208,8 @@ footer {
     height: 100px;
     border-radius: 3px;
 }
+
+.outer-div2 {
+    padding:0px;
+    position: unset;
+}
