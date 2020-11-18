@@ -3,9 +3,8 @@ body {
     padding: 0;
     font-family: Google Sans, Noto, Roboto, Helvetica Neue, sans-serif;
     color: #FF9E00;
-    background-color: rgb(214, 214, 214);
+    background-color: rgb(230, 230, 230);
 }
-blabla
 
 h1 {
     color: white;
@@ -14,7 +13,7 @@ h1 {
 }
 
 h2 {
-    color: white;
+    color: black;
     text-align: center;
     font-size: 15px;
 }
@@ -59,7 +58,6 @@ card {
 }
 
 #card1 {
-    margin: 3em auto;
     display: flex;
     flex-direction: column;
     max-width: 600px;
@@ -152,7 +150,7 @@ footer {
     padding: 20px;
     margin-top: 20px;
     font-size: 30px;
-    background-color: rgb(214, 214, 214);
+    background-color: rgb(230, 230, 230);
 }
 
     .boutonmenuprincipal:hover {
