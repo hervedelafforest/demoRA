@@ -16,6 +16,14 @@ h2 {
     color: black;
     text-align: center;
     font-size: 15px;
+    font-weight: normal;
+}
+
+h2b {
+    color: black;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 p {
