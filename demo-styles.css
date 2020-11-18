@@ -5,7 +5,12 @@ body {
     color: #FF9E00;
     background-color: rgb(230, 230, 230);
 }
-
+a {
+    color: black;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
 h1 {
     color: orange;
     text-align: center;
