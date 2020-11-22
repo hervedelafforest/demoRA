@@ -71,6 +71,7 @@ card {
 }
 
 #card1 {
+    margin: 3em auto;
     display: flex;
     flex-direction: column;
     max-width: 600px;
