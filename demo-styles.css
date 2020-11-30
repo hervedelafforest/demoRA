@@ -210,8 +210,8 @@ footer {
 
 
 .outer-div {
-    padding: 30px;
     position : unset;
+    margin-top : 60px;
 }
 
 .inner-div {
@@ -237,7 +237,7 @@ footer {
     margin: 1em auto;
     display: flex;
     flex-direction: column;
-    max-width: 50%;
+    max-width: 48%;
     max-height: 300px;
     border-radius: 6px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
