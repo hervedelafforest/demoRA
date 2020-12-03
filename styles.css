@@ -8,7 +8,7 @@ body {
 a {
     color: black;
     text-align: center;
-    font-size: 15px;
+    font-size: 10px;
     font-weight: bold;
 }
 h1 {
@@ -29,6 +29,12 @@ h2b {
     text-align: center;
     font-size: 15px;
     font-weight: bold;
+}
+
+h3 {
+    color: orange;
+    text-align: center;
+    font-size: 10px;
 }
 
 p {
@@ -237,9 +243,13 @@ footer {
     margin: 1em auto;
     display: flex;
     flex-direction: column;
-    max-width: 49%;
+    width: 49%;
     max-height: 250px;
     border-radius: 6px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
     overflow: hidden;
+}
+
+span {
+    margin: 1px;
 }
