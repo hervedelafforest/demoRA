@@ -31,12 +31,6 @@ h2b {
     font-weight: bold;
 }
 
-h3 {
-    color: orange;
-    text-align: center;
-    font-size: 10px;
-}
-
 p {
     font-family: verdana;
     font-size: 20px;
@@ -74,66 +68,6 @@ card {
     border-radius: 6px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
     overflow: hidden
-}
-
-#card1 {
-    margin: 3em auto;
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    border-radius: 6px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
-}
-
-#card2 {
-    margin: 3em auto;
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    border-radius: 6px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
-}
-
-#card3 {
-    margin: 3em auto;
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    border-radius: 6px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
-}
-
-#card4 {
-    margin: 3em auto;
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    border-radius: 6px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
-}
-
-#card5 {
-    margin: 3em auto;
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    border-radius: 6px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
-}
-
-#card6 {
-    margin: 3em auto;
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    border-radius: 6px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
 }
 
 model-viewer {
@@ -248,8 +182,4 @@ footer {
     border-radius: 6px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
     overflow: hidden;
-}
-
-span {
-    margin: 1px;
 }
