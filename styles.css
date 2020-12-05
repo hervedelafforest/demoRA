@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-family: Google Sans, Noto, Roboto, Helvetica Neue, sans-serif;
     color: #2d2d2d;
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(240, 240, 240);
 }
 a {
     color: black;
@@ -12,9 +12,10 @@ a {
     font-weight: bold;
 }
 h1 {
-    color: orange;
+    color: black;
     text-align: center;
     font-size: 20px;
+    text-shadow: 1px 1px 1px #CFB565, 1px 2px 1px #CFB565, 1px 3px 1px #CFB565, 1px 4px 1px #CFB565, 1px 5px 1px #CFB565, 1px 6px 1px #CFB565, 1px 7px 1px #CFB565, 0 1px 1px rgba(68,68,68,.3), 0 5px 3px rgba(68,68,68,.2), 0 10px 4px rgba(68,68,68,.2), 0 15px 8px rgba(68,68,68,.2), 0 30px 10px rgba(68,68,68,.1);
 }
 
 h2 {
@@ -169,8 +170,9 @@ footer {
 
 
 .outer-div {
-    position : unset;
-    margin-top : 60px;
+    position: unset;
+    margin-top: 40px;
+    z-index: 2;
 }
 
 .inner-div {
@@ -178,6 +180,8 @@ footer {
     max-width: 60%;
     height: 100px;
     border-radius: 3px;
+    z-index: 3;
+    position: relative;
 }
 
 .outer-div2 {
