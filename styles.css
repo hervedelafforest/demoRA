@@ -1,10 +1,52 @@
 body {
-    margin: 1em;
+    margin: 0;
     padding: 0;
     font-family: Google Sans, Noto, Roboto, Helvetica Neue, sans-serif;
     color: #2d2d2d;
     background-color: rgb(240, 240, 240);
 }
+
+.haut-background {
+    height: 140px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #DCDCDC;
+    border-bottom-style: solid
+}
+
+.haut {
+    position: unset;
+    margin-top: 40px;
+    z-index: 2;
+}
+
+.haut-1 {
+    width: 20%;
+    position: absolute;
+    top: 40px;
+    left: 10px;
+}
+
+.haut-2 {
+    margin: 0 auto;
+    max-width: 60%;
+    height: 100px;
+    border-radius: 3px;
+    z-index: 3;
+    position: relative;
+    padding-left: 40px;
+}
+
+.centre1-background {
+    border-bottom-style: solid;
+    height: 300px;
+    width: 100%;
+    position: absolute;
+    margin: 0 auto;
+}
+
 a {
     color: black;
     text-align: center;
@@ -16,6 +58,7 @@ h1 {
     text-align: center;
     font-size: 20px;
     text-shadow: 1px 1px 1px #CFB565;
+    margin: 1em;
 }
 
 h2 {
@@ -23,6 +66,7 @@ h2 {
     text-align: center;
     font-size: 15px;
     font-weight: normal;
+    margin: 1em;
 }
 
 h2b {
@@ -30,25 +74,29 @@ h2b {
     text-align: center;
     font-size: 15px;
     font-weight: bold;
+    margin: 1em;
 }
 
 h3 {
     color: black;
     text-align: center;
     font-size: 23px;
-    font-weight:normal;
+    font-weight: normal;
+    margin: 1em;
 }
 h3b {
     color: black;
     text-align: center;
     font-size: 23px;
     font-weight: bold;
+    margin: 1em;
 }
 
 h4 {
     color: black;
     text-align: center;
     font-size: 18px;
+    margin: 1em;
 }
 
 p {
@@ -168,22 +216,6 @@ footer {
     display: block;
 }
 
-
-.outer-div {
-    position: unset;
-    margin-top: 40px;
-    z-index: 2;
-}
-
-.inner-div {
-    margin: 0 auto;
-    max-width: 60%;
-    height: 100px;
-    border-radius: 3px;
-    z-index: 3;
-    position: relative;
-    padding-left: 40px;
-}
 
 .outer-div2 {
     padding:0px;
