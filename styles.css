@@ -42,7 +42,7 @@ body {
 
 .centre1-background {
     border-bottom-style: solid;
-    height: 95vw;
+    height: 100vw;
     width: 100%;
     position: absolute;
     margin: 0 auto;
@@ -54,6 +54,7 @@ a {
     font-size: 10px;
     font-weight: bold;
 }
+
 h1 {
     color: black;
     text-align: center;
