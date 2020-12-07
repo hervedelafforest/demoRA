@@ -42,7 +42,7 @@ body {
 
 .centre1-background {
     border-bottom-style: solid;
-    height: 96vw;
+    height: 95vw;
     width: 100%;
     position: absolute;
     margin: 0 auto;
@@ -232,4 +232,13 @@ footer {
     border-radius: 6px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
     overflow: hidden;
+}
+
+.bas-background {
+    height: 85vw;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #DCDCDC;
+    border-top-style : solid
 }
