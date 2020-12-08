@@ -48,6 +48,28 @@ body {
     margin: 0 auto;
 }
 
+.centre1 {
+    height: 96vw;
+}
+
+.catalogue {
+    padding: 0px;
+    position: unset;
+    display: flex;
+    flex-direction: row;
+}
+
+.catalogue-case {
+    margin: 1em auto;
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    max-height: 250px;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
 a {
     color: black;
     text-align: center;
@@ -215,24 +237,6 @@ footer {
 .outer-div2 {
     padding:0px;
     position: unset;
-}
-
-.outer-divcat {
-    padding: 0px;
-    position: unset;
-    display: flex;
-    flex-direction:row;
-}
-
-.card {
-    margin: 1em auto;
-    display: flex;
-    flex-direction: column;
-    width: 49%;
-    max-height: 250px;
-    border-radius: 6px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
 }
 
 .bas-background {
