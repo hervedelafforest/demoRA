@@ -134,6 +134,10 @@ img {
     height: auto;
 }
 
+imgcredit {
+    width: 10vw
+}
+
 .bouton {
     color: #494949 !important;
     text-transform: uppercase;
@@ -326,5 +330,8 @@ footer {
         left: 0;
         background-color: #DCDCDC;
         border-top-style: solid
+    }
+    imgcredit {
+        width: 5vw
     }
 }
